@@ -15,29 +15,44 @@ namespace StylishLoginForm
 		private void CustomizeDesign()
 		{
 			// Настройка фона формы
-			this.BackColor = Color.White;
-			this.FormBorderStyle = FormBorderStyle.FixedDialog;
+			this.BackColor = Color.FromArgb(240, 240, 240);
+			this.FormBorderStyle = FormBorderStyle.None;
 			this.StartPosition = FormStartPosition.CenterScreen;
+			this.Padding = new Padding(10, 20, 10, 10); // Добавить отступы
 
 			// Настройка стилей полей ввода
-			txtUsername.BackColor = Color.LightGray;
-			txtUsername.BorderStyle = BorderStyle.None;
+			txtUsername.BackColor = Color.White;
+			txtUsername.BorderStyle = BorderStyle.FixedSingle;
+			txtUsername.Font = new Font("Segoe UI", 12);
+			txtUsername.ForeColor = Color.Gray;
 
-			txtPassword.BackColor = Color.LightGray;
-			txtPassword.BorderStyle = BorderStyle.None;
+			txtPassword.BackColor = Color.White;
+			txtPassword.BorderStyle = BorderStyle.FixedSingle;
+			txtPassword.Font = new Font("Segoe UI", 12);
+			txtPassword.ForeColor = Color.Gray;
 
 			// Настройка стилей для кнопок
 			btnLogin.BackColor = Color.DodgerBlue;
 			btnLogin.ForeColor = Color.White;
 			btnLogin.FlatStyle = FlatStyle.Flat;
+			btnLogin.Font = new Font("Segoe UI", 12);
+			btnLogin.FlatAppearance.BorderSize = 0;
+			btnLogin.MouseEnter += (s, e) => btnLogin.BackColor = Color.CornflowerBlue; // Эффект наведения
+			btnLogin.MouseLeave += (s, e) => btnLogin.BackColor = Color.DodgerBlue;
 
 			btnCancel.BackColor = Color.Gray;
 			btnCancel.ForeColor = Color.White;
 			btnCancel.FlatStyle = FlatStyle.Flat;
+			btnCancel.Font = new Font("Segoe UI", 12);
+			btnCancel.FlatAppearance.BorderSize = 0;
+			btnCancel.MouseEnter += (s, e) => btnCancel.BackColor = Color.DarkGray; // Эффект наведения
+			btnCancel.MouseLeave += (s, e) => btnCancel.BackColor = Color.Gray;
 
 			// Настройка заголовка
-			lblTitle.Font = new Font("Arial", 14, FontStyle.Bold);
+			lblTitle.Font = new Font("Segoe UI", 20, FontStyle.Bold);
 			lblTitle.ForeColor = Color.DodgerBlue;
+			lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+			lblTitle.Dock = DockStyle.Top; // Выравнивание заголовка
 		}
 
 		private void btnLogin_Click(object sender, EventArgs e)
